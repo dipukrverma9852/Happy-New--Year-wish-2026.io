@@ -1,8 +1,8 @@
 // Audio files 
 const audioFiles = [
+    'Audio/song 1.mp3',
     'Audio/song.mp3',
-    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+    'Audio/song 2.mp3',
     'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3'
 ];
 
@@ -84,136 +84,135 @@ audios.forEach((audio, index) => {
     });
 });
 
-        // Fireworks effect
-        function createFirework() {
-            const fireworks = document.getElementById('fireworks');
-            const firework = document.createElement('div');
-            firework.classList.add('firework');
-            
-            // Random position
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            
-            // Random color
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffffff'];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            
-            // Random movement
-            const tx = (Math.random() - 0.5) * 200;
-            const ty = (Math.random() - 0.5) * 200;
-            
-            firework.style.left = `${x}%`;
-            firework.style.top = `${y}%`;
-            firework.style.backgroundColor = color;
-            firework.style.boxShadow = `0 0 10px 2px ${color}`;
-            firework.style.setProperty('--tx', `${tx}px`);
-            firework.style.setProperty('--ty', `${ty}px`);
-            
-            fireworks.appendChild(firework);
-            
-            // Remove after animation
-            setTimeout(() => {
-                firework.remove();
-            }, 1500);
-        }
-        
-        // Create multiple fireworks
-        setInterval(createFirework, 200);
-        
-        // Add decorative elements
-        const decorations = ['🎉', '✨', '🎊', '🎇', '🎆', '🥳', '🌟'];
-       // <source src="video.mp4" type="video/mp4">
-            for (let i = 0; i < 15; i++) {
-            const decor = document.createElement('div');
-            decor.classList.add('decoration');
-            decor.textContent = decorations[Math.floor(Math.random() * decorations.length)];
+// Fireworks effect
+function createFirework() {
+    const fireworks = document.getElementById('fireworks');
+    const firework = document.createElement('div');
+    firework.classList.add('firework');
+    
+    // Random position
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    
+    // Random color
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffffff'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Random movement
+    const tx = (Math.random() - 0.5) * 200;
+    const ty = (Math.random() - 0.5) * 200;
+    
+    firework.style.left = `${x}%`;
+    firework.style.top = `${y}%`;
+    firework.style.backgroundColor = color;
+    firework.style.boxShadow = `0 0 10px 2px ${color}`;
+    firework.style.setProperty('--tx', `${tx}px`);
+    firework.style.setProperty('--ty', `${ty}px`);
+    
+    fireworks.appendChild(firework);
+    
+    // Remove after animation
+    setTimeout(() => {
+        firework.remove();
+    }, 1500);
+}
 
-            // Random position
-            decor.style.left = `${Math.random() * 100}%`;
-            decor.style.top = `${Math.random() * 100}%`;
+// Create multiple fireworks
+setInterval(createFirework, 200);
 
-            // Random animation delay
-            decor.style.animationDelay = `${Math.random() * 5}s`;
+// Add decorative elements
+const decorations = ['🎉', '✨', '🎊', '🎇', '🎆', '🥳', '🌟'];
+for (let i = 0; i < 15; i++) {
+    const decor = document.createElement('div');
+    decor.classList.add('decoration');
+    decor.textContent = decorations[Math.floor(Math.random() * decorations.length)];
 
-            document.body.appendChild(decor);
-        }
+    // Random position
+    decor.style.left = `${Math.random() * 100}%`;
+    decor.style.top = `${Math.random() * 100}%`;
 
-            // Page navigation function
-            function showPage(pageId) {
-                // Hide all pages
-                document.querySelectorAll('.page').forEach(page => {
-                    page.classList.remove('active');
-                });
+    // Random animation delay
+    decor.style.animationDelay = `${Math.random() * 5}s`;
 
-            // Show the requested page
-            document.getElementById(pageId).classList.add('active');
-        }
+    document.body.appendChild(decor);
+}
 
-            // Shayari data
-            const shayaris = [
-            {
-                text: "नया साल लाया है खुशियों की बहार,\nहर दिन हो मुबारक, हर पल हो प्यार।\nमिले सफलता आपको हर कदम पर,\nयही दुआ है हमारी बार-बार।",
-            author: "-Er. Dipu Singh kushwaha"
-            },
-            {
-                text: "पुराने साल की विदाई लेकर आया हूं,\nनए साल की शुभकामनाएं लेकर आया हूं।\nआपकी जिंदगी में खुशियां भर दूं,\nइसी ख्वाहिश के साथ आया हूं।",
-            author: "- Er. Dipu Singh kushwaha"
-            },
-            {
-                text: "हर सुबह नई उम्मीद लेकर आती है,\nहर शाम नई खुशी दे जाती है।\nनया साल आपके लिए लेकर आए,\nवो सब कुछ जो आपकी दुआएं मांगती हैं।",
-            author: "- Er. Dipu Singh kushwaha"
-            },
-            {
-                text: "नया साल आपके जीवन में लाए,\nसुख, शांति और समृद्धि की बहार।\nहर मुश्किल आसान हो जाए,\nहर दिन हो आपके लिए खास।",
-            author: "- Er. Dipu Singh kushwaha"
-            }
-            ];
+// Page navigation function
+function showPage(pageId) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
 
-            let currentShayariIndex = 0;
+    // Show the requested page
+    document.getElementById(pageId).classList.add('active');
+}
 
-            // Event Listeners for page navigation
-            document.getElementById('wishBtn').addEventListener('click', function() {
-                showPage('wishPage');
-        });
+// Shayari data
+const shayaris = [
+    {
+        text: "नया साल लाया है खुशियों की बहार,\nहर दिन हो मुबारक, हर पल हो प्यार।\nमिले सफलता आपको हर कदम पर,\nयही दुआ है हमारी बार-बार।",
+        author: "- Er. Dipu Singh Kushwaha"
+    },
+    {
+        text: "पुराने साल की विदाई लेकर आया हूं,\nनए साल की शुभकामनाएं लेकर आया हूं।\nआपकी जिंदगी में खुशियां भर दूं,\nइसी ख्वाहिश के साथ आया हूं।",
+        author: "- Er. Dipu Singh Kushwaha"
+    },
+    {
+        text: "हर सुबह नई उम्मीद लेकर आती है,\nहर शाम नई खुशी दे जाती है।\nनया साल आपके लिए लेकर आए,\nवो सब कुछ जो आपकी दुआएं मांगती हैं।",
+        author: "- Er. Dipu Singh Kushwaha"
+    },
+    {
+        text: "नया साल आपके जीवन में लाए,\nसुख, शांति और समृद्धि की बहार।\nहर मुश्किल आसान हो जाए,\nहर दिन हो आपके लिए खास।",
+        author: "- Er. Dipu Singh Kushwaha"
+    }
+];
 
-            document.getElementById('backBtn1').addEventListener('click', function() {
-                showPage('mainPage');
-        });
+let currentShayariIndex = 0;
 
-            document.getElementById('shayariBtn').addEventListener('click', function() {
-                showPage('shayariPage');
-        });
+// Event Listeners for page navigation
+document.getElementById('wishBtn').addEventListener('click', function() {
+    showPage('wishPage');
+});
 
-            document.getElementById('songBtn').addEventListener('click', function() {
-                showPage('songPage');
-        });
+document.getElementById('backBtn1').addEventListener('click', function() {
+    showPage('mainPage');
+});
 
-            document.getElementById('giftBtn').addEventListener('click', function() {
-                showPage('giftPage');
-        });
+document.getElementById('shayariBtn').addEventListener('click', function() {
+    showPage('shayariPage');
+});
 
-            document.getElementById('backBtn2').addEventListener('click', function() {
-                showPage('wishPage');
-        });
+document.getElementById('songBtn').addEventListener('click', function() {
+    showPage('songPage');
+});
 
-            document.getElementById('backBtn3').addEventListener('click', function() {
-                showPage('wishPage');
-        });
+document.getElementById('giftBtn').addEventListener('click', function() {
+    showPage('giftPage');
+});
 
-            document.getElementById('backBtn4').addEventListener('click', function() {
-                showPage('wishPage');
-        });
+document.getElementById('backBtn2').addEventListener('click', function() {
+    showPage('wishPage');
+});
 
-            // Next Shayari functionality
-            document.getElementById('nextShayariBtn').addEventListener('click', function() {
-                currentShayariIndex = (currentShayariIndex + 1) % shayaris.length;
-            const shayari = shayaris[currentShayariIndex];
-            document.getElementById('shayariText').innerHTML = shayari.text.replace(/\n/g, '<br>');
-                document.getElementById('shayariAuthor').textContent = shayari.author;
-        });
+document.getElementById('backBtn3').addEventListener('click', function() {
+    showPage('wishPage');
+});
 
-                // Open Gift functionality
-                document.getElementById('openGiftBtn').addEventListener('click', function() {
-                    document.querySelector('.gift-box').style.display = 'none';
-                document.getElementById('giftMessage').style.display = 'block';
-        });
+document.getElementById('backBtn4').addEventListener('click', function() {
+    showPage('wishPage');
+});
+
+// Next Shayari functionality
+document.getElementById('nextShayariBtn').addEventListener('click', function() {
+    currentShayariIndex = (currentShayariIndex + 1) % shayaris.length;
+    const shayari = shayaris[currentShayariIndex];
+    document.getElementById('shayariText').innerHTML = shayari.text.replace(/\n/g, '<br>');
+    document.getElementById('shayariAuthor').textContent = shayari.author;
+});
+
+// Open Gift functionality
+document.getElementById('openGiftBtn').addEventListener('click', function() {
+    document.querySelector('.gift-box').style.display = 'none';
+    document.getElementById('giftMessage').style.display = 'block';
+});
